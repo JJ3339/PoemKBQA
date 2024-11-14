@@ -3,7 +3,7 @@ from py2neo import *
 
 class GetAnswer:
     def __init__(self):
-        self.graph = Graph("http://localhost:7474", auth=("neo4j", "123456"))
+        self.graph = Graph("bolt://localhost:7687", auth=("neo4j", "12345678"))
 
     def get_data(self, index, param):
         query = ''
@@ -38,4 +38,4 @@ if __name__ == "__main__":
     ga = GetAnswer()
     answers = ga.get_data(0, '李白')
     for answer in answers:
-        print(answer[0])
+        print(answer)

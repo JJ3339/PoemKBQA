@@ -13,7 +13,7 @@ class PoemGraph(object):
         super(PoemGraph, self).__init__()
         self.path = os.path.split(os.path.realpath(__file__))[0] + \
                     os.sep + "poemData" + os.sep + "csv" + os.sep + "all.csv"
-        self.graph = Graph("http://localhost:7474", auth=("neo4j", "123456"))  # 链接至图谱
+        self.graph = Graph("bolt://localhost:7687", auth=("neo4j", "12345678"))  # 链接至图谱
         self.graph.run("match(n) detach delete(n)")  # 删除现有图谱
 
     def create_node(self, label, nodes):
