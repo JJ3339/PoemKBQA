@@ -1,0 +1,47 @@
+/* 通用样式 */
+body {
+    background-color: #f9f9f9;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    padding-top: 20px;
+}
+
+h1 {
+    color: #007bff;
+}
+
+.section {
+    margin-bottom: 30px;
+}
+
+button {
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* 问答系统部分 */
+#question {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+#answer {
+    font-size: 16px;
+    display: none;
+}
+
+/* 图谱生成部分 */
+#cypher-query {
+    resize: none;
+    border-radius: 5px;
+}
+
+iframe {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
