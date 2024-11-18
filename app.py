@@ -81,10 +81,10 @@ def generate_graph():
     接收自然语言查询，生成知识图谱并返回文件路径
     """
     data = request.get_json()
-    natural_language_query = data.get('cypher_query', '')
+    natural_language_query = data.get('query', '')
     # return jsonify({'error': natural_language_query})
     if not natural_language_query:
-        return jsonify({'error': '请输入有效的自然语言查询'})
+        return jsonify({'error': '请输入有效的查询'})
 
     try:
         # 解析自然语言，获取索引和参数

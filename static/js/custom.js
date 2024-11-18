@@ -25,10 +25,10 @@ $(document).ready(function () {
 
     // 生成知识图谱部分
     $('#generate-btn').click(function () {
-        const cypherQuery = $('#cypher-query').val().trim();
+        const cypherQuery = $('#query').val().trim();
 
         if (!cypherQuery) {
-            alert('请输入 Cypher 查询');
+            alert('请输入查询');
             return;
         }
 
@@ -37,7 +37,7 @@ $(document).ready(function () {
             url: '/generate_graph',
             method: 'POST',
             contentType: 'application/json',
-            data: JSON.stringify({ cypher_query: cypherQuery }),
+            data: JSON.stringify({ query: cypherQuery }),
             success: function (data) {
                 if (data.graph_url) {
                     $('#graph-frame').removeClass('d-none').attr('src', data.graph_url);

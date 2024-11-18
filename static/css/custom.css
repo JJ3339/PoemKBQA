@@ -30,11 +30,21 @@ button:hover {
     font-size: 16px;
 }
 
-#answer {
-    font-size: 16px;
-    display: none;
+ #answer {
+    padding: 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
 }
-
+#answer.alert-success {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+}
+#answer.alert-danger {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+}
 /* 图谱生成部分 */
 #cypher-query {
     resize: none;
