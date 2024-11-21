@@ -94,7 +94,7 @@ class GetAnswer:
                         net.add_edge(start_node, end_node, title="Linked")  # 可定制边的标题
                         added_edges.add(edge_key)
 
-        # 设置物理模拟参数来优化布局
+        # 新增,设置物理模拟参数来优化布局
         net.set_options("""
         {
           "physics": {
