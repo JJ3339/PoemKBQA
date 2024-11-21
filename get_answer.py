@@ -64,7 +64,7 @@ class GetAnswer:
         result = self.graph.run(cypher_query).data()
 
         # 创建一个PyVis网络对象
-        net = Network(height="750px", width="100%", bgcolor="#ffffff", font_color="black")
+        net = Network(height="1000px", width="100%", bgcolor="#F4F8F7", font_color="black")
 
         # 用来存储已添加的节点和边，避免重复
         added_nodes = set()
@@ -93,6 +93,30 @@ class GetAnswer:
                     if edge_key not in added_edges:  # 避免重复添加边
                         net.add_edge(start_node, end_node, title="Linked")  # 可定制边的标题
                         added_edges.add(edge_key)
+
+        # 设置物理模拟参数来优化布局
+        net.set_options("""
+        {
+          "physics": {
+            "barnesHut": {
+              "gravitationalConstant": -20000,
+              "centralGravity": 1,
+              "springLength": 60,
+              "springConstant": 0.001,
+              "damping": 0.09
+            },
+            "maxVelocity": 146,
+            "minVelocity": 0.1,
+            "solver": "barnesHut",
+            "timestep": 0.3,
+            "stabilization": {
+              "enabled": true,
+              "iterations": 1000,
+              "fit": true
+            }
+          }
+        }
+        """)
 
         # 将PyVis网络对象保存为HTML文件
         net.save_graph(output_file)

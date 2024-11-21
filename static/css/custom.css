@@ -1,17 +1,105 @@
+html,body{
+    height: 100%;
+}
 /* 通用样式 */
 body {
     background-color: #f9f9f9;
     font-family: 'Arial', sans-serif;
     color: #333;
     padding-top: 20px;
+    background-image: url('../img/background1.jpg');
+    background-size: 100% auto; /* 设置背景图片宽度为100%适应页面宽度 */
+    background-position: top center; /* 设置背景图片从顶部开始 */
+    background-attachment: fixed; /* 背景图片固定在页面 */
+    position: relative;
 }
 
+
 h1 {
-    color: #007bff;
+    font-family:STKaiti;
+    color:#AECADF;
+    font-size:80px;
+    font-weight:800;
+    padding-top: 60px;
+    text-shadow: 4px 4px 4px #5A798C,
+             8px 8px 8px 	#5A7C8C,
+             12px 12px 12px #2D393B;
+}
+h2{
+    font-family:STKaiti;
+    padding-top:20px;
+    font-weight:800;
+    color:#213D45 !important;
+}
+
+.form-label{
+    font-family:STKaiti;
+    font-weight:800;
+    padding-top:20px;
+    color:#213D45 !important;
+}
+
+/*导航栏*/
+/* 修改整个导航栏的左边距和左边框 */
+.navbar {
+    padding-left: 15%; /* 设置整个导航栏的左边距 */
+    border-left: 3px solid #ccc; /* 设置导航栏的左边框 */
+    background-color: transparent !important;
+}
+
+/*导航栏左边标题*/
+.navbar-brand {
+    font-family: STKaiti; /* 更改字体 */
+    font-size: 28px; /* 更改字体大小 */
+    font-weight: bold;
+    color: 	#213D45 !important; /* 更改字体颜色 */
+}
+
+
+/* 修改导航栏容器的左边距 */
+.container-fluid {
+    padding-left: 20px; /* 设置容器的左边距 */
+}
+
+/* 修改导航项之间的左边距和边框 */
+.nav-item {
+    margin-left: 10px; /* 设置每个导航项的左边距 */
+}
+
+/* 修改导航项链接的样式 */
+.nav-link {
+    padding-left: 10px; /* 设置每个链接的左内边距 */
+    padding-right: 10px; /* 设置每个链接的右内边距 */
+    line-height: 40px; /* 设置相同的行高来保持垂直对齐 */
+    font-family:STXinwei;
+    font-size: 18px;
+    color:DimGray!important;
+}
+
+/* 设置 active 链接的样式 */
+#nav-qa.active {
+    line-height: 40px; /* 设置相同的行高来保持垂直对齐 */
+    font-weight: bold;
+    color: #B7D2E7 !important;
+    font-family: STXingkai;
+    font-size: 24px;
+}
+
+#nav-graph.active {
+    line-height: 40px; /* 设置相同的行高来保持垂直对齐 */
+    font-weight: bold;
+    color: #5A7C8C !important;
+    font-family: STXingkai;
+    font-size: 24px;
+}
+.container{
+    height: 85%;
+    padding-bottom: 10px;
 }
 
 .section {
-    margin-bottom: 30px;
+    min-height: 70%;
+    box-sizing: border-box;
 }
 
 button {
@@ -36,9 +124,20 @@ button:hover {
     transition: all 0.3s ease;
 }
 #answer.alert-success {
-    background-color: #d4edda;
     border-color: #c3e6cb;
-    color: #155724;
+    font-size:18px;
+    color:#293738;
+    padding-left:60px ;
+    font-family:SimSun;
+    font-weight:bold;
+    /* 设置固定的高度以显示滚动条 */
+    height: 600px; /* 固定高度 */
+    /* 启用垂直滚动条 */
+    overflow-y: auto;
+    background-image: url('../img/background3.jpeg');
+    background-size: 100% auto; /* 设置背景图片宽度为100%适应页面宽度 */
+    background-position: top center; /* 设置背景图片从顶部开始 */
+    background-attachment: fixed; /* 背景图片固定在页面 */
 }
 #answer.alert-danger {
     background-color: #f8d7da;
@@ -55,3 +154,13 @@ iframe {
     border: 1px solid #ddd;
     border-radius: 5px;
 }
+
+footer {
+    left: 0;
+    width: 100%;  /* 设置宽度为100%，使footer横跨整个页面 */
+    padding-bottom: 20px ;  /* 上下内边距 */
+    text-align: center;
+    font-size: 14px;  /* 设置适当的字体大小 */
+
+}
+

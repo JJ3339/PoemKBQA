@@ -70,9 +70,11 @@ def ask():
 
         if result:
             if isinstance(result, list):
-                return jsonify({'answer': "\n".join(result)})
+                # 将列表中的每个元素连接，并在每个元素之间插入 <br> 标签
+                return jsonify({'answer': "<br>".join([item.replace('\n', '<br>') for item in result])})
             else:
-                return jsonify({'answer': result})
+                # 如果是单个字符串，直接替换换行符为 <br> 标签
+                return jsonify({'answer': result.replace('\n', '<br>')})
     return jsonify({'answer': '暂时不知道答案'})
 
 @app.route('/generate_graph', methods=['POST'])

@@ -15,10 +15,11 @@ $(document).ready(function () {
             contentType: 'application/json',
             data: JSON.stringify({ question: question }),
             success: function (data) {
-                $('#answer').removeClass('d-none').text(data.answer);
+                // 使用 .html() 方法渲染 HTML 内容，这样 <br> 标签才会生效
+                $('#answer').removeClass('d-none').html(data.answer);
             },
             error: function () {
-                $('#answer').removeClass('alert-success').addClass('alert-danger').text('发生错误，请稍后重试');
+                $('#answer').removeClass('alert-success').addClass('alert-danger').html('发生错误，请稍后重试');
             }
         });
     });
