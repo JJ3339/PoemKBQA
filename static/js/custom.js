@@ -15,7 +15,7 @@ $(document).ready(function () {
             contentType: 'application/json',
             data: JSON.stringify({ question: question }),
             success: function (data) {
-                // 使用 .html() 方法渲染 HTML 内容，这样 <br> 标签才会生效
+                //使用 .html() 方法渲染 HTML 内容，这样 <br> 标签才会生效
                 $('#answer').removeClass('d-none').html(data.answer);
             },
             error: function () {
