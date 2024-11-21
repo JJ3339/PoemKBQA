@@ -32,7 +32,7 @@ def ask():
         answers = ga.get_data(index, params[0])
     except IndexError:
         return jsonify({'answer': '暂时不知道答案'})
-
+    #回答
     if answers:
         # 格式化答案（与 GUI 逻辑相同）
         if index == 0:
