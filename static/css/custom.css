@@ -39,8 +39,7 @@ h2{
     color:#213D45 !important;
 }
 
-/*导航栏*/
-/* 修改整个导航栏的左边距和左边框 */
+/*导航栏 修改整个导航栏的左边距和左边框 */
 .navbar {
     padding-left: 15%; /* 设置整个导航栏的左边距 */
     border-left: 3px solid #ccc; /* 设置导航栏的左边框 */
