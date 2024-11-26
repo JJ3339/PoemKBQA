@@ -30,6 +30,12 @@ class GetAnswer:
             # 某诗句出自某朝代某诗人写作的某诗
             query = "MATCH (p:Poem)-[:Poem_IS_Author]->(a:Author)-[:Author_IS_Dynasty]->(d:Dynasty) " \
                     "WHERE p.content=~'.*{}.*' RETURN d.name,a.name,p.name, p.content;".format(param)
+        elif index == 7:
+            # 某标签的诗有哪些
+            query = "MATCH (p:Poem)-[:Poem_IS_Tag]->(t:Tag) WHERE t.name='{}' RETURN p.name;".format(param)
+
+
+
         result = self.graph.run(query).data()
         return result
 
@@ -53,6 +59,9 @@ class GetAnswer:
         elif index == 6:
             return f"MATCH (p:Poem)-[:Poem_IS_Author]->(a:Author)-[:Author_IS_Dynasty]->(d:Dynasty) " \
                    f"WHERE p.content=~'.*{param}.*' RETURN d, a, p"
+        elif index == 7:
+            # 某标签的诗有哪些
+            return f"MATCH (p:Poem)-[:Poem_IS_Tag]->(t:Tag) WHERE t.name='{param}' RETURN p, t"
         else:
             return None
 

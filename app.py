@@ -3,6 +3,8 @@ import os
 from flask import Flask, request, jsonify, render_template
 from QuestionClassifier import PoemQuestionClassifier
 from get_answer import GetAnswer
+# app.py
+from tokenizer import jieba_tokenizer
 
 app = Flask(__name__)
 
@@ -65,6 +67,9 @@ def ask():
                 result_str = f"出自 {item['d.name']} 的诗人 {item['a.name']} 写作的：\n《{item['p.name']}》\n\n" + \
                              "完整内容：\n" + item['p.content'].replace('。', '。\n').replace('，', '，\n') + "\n" + "-" * 30 + "\n"
                 result.append(result_str)
+        elif index == 7:
+            result = list(set([answer['p.name'] for answer in answers]))
+
         else:
             result = False
 
